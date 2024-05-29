@@ -18354,7 +18354,7 @@ parse_expression_prefix(pm_parser_t *parser, pm_binding_power_t binding_power, b
             switch (keyword.type) {
                 case PM_TOKEN_KEYWORD_BREAK: {
                     pm_node_t *node = (pm_node_t *) pm_break_node_create(parser, &keyword, arguments.arguments);
-                    if (!parser->parsing_eval) parse_block_exit(parser, node, "break");
+                    if (!parser->parsing_eval && arguments.arguments != NULL) parse_block_exit(parser, node, "break");
                     return node;
                 }
                 case PM_TOKEN_KEYWORD_NEXT: {

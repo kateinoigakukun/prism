@@ -292,6 +292,10 @@ module Prism
       ]
     end
 
+    def test_break_while_false
+      refute_error_messages("break while false")
+    end
+
     def test_argument_forwarding_when_parent_is_not_forwarding
       assert_errors expression('def a(x, y, z); b(...); end'), 'def a(x, y, z); b(...); end', [
         ["unexpected ... when the parent method is not forwarding", 18..21]

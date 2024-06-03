@@ -222,6 +222,8 @@ jobs:
       run: |
         wget https://sourceware.org/pub/valgrind/valgrind-3.23.0.tar.bz2
         tar xf valgrind-3.23.0.tar.bz2
+    - run: |
+        printf "deb http://ddebs.ubuntu.com %s main restricted universe multiverse\n" $(lsb_release -cs){,-updates,-security,-proposed} | sudo tee -a /etc/apt/sources.list.d/ddebs.list
     - name: Install valgrind
       run: |
         cd valgrind-3.23.0

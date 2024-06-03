@@ -21,7 +21,7 @@ GEM
     rake (13.2.1)
     rake-compiler (1.2.7)
       rake
-    ruby_memcheck (3.0.0)
+    ruby_memcheck (2.3.0)
       nokogiri
     ruby_parser (3.21.0)
       racc (~> 1.5)
